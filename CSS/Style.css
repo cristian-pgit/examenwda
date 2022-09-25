@@ -26,15 +26,18 @@ form {
     padding-bottom: 1rem;
 }
 
+
 main {
     display: flex;
     flex-direction: column;
-    text-align: center;
+    color: white;
+    justify-content: space-between;
+    justify-content: center;
 }
 
 img{
-    max-width: 300px;
-    height: 300px;
+    max-width: 200px;
+    height: 200px;
     display:block;
     margin:auto;
     padding: 10px;

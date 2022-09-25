@@ -8,6 +8,12 @@ let actualUrl = "";
 let indexStart = 0;
 const limitPage = 21;
 
+document.getElementById("buscar").addEventListener("keypress", function(event){
+    if(event.key === 'Enter'){
+        event.preventDefault()
+    }
+  });
+
 const construirPantalla = async(url ) =>{
     const contenedor = document.createElement("div");
     contenedor.className = "trending";
@@ -30,8 +36,8 @@ const getGiphys = async (url) => {
 const cargar = async (url) => {
     const gyphys = await getGiphys(url);
     if (gyphys.length == 0){
-        //borrar el cotenido de main
-        //agregar a main mensaje de not found
+        document.querySelector("main").innerHTML = "";//borrar el cotenido de main
+        document.querySelector("main").innerHTML = "<h2>Search not Found</h2>";//agregar a main mensaje Search not found
     }
     for (let gy of gyphys){
         construirPantalla(gy.images.original.webp);
